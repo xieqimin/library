@@ -6,48 +6,48 @@ import java.util.Date;
 public class Lend implements Serializable {
 
     private long sernum;
-    private long bookId;
-    private int readerId;
-    private Date lendDate;
-    private Date backDate;
+    private long book_id;
+    private int reader_id;
+    private Date lend_date;
+    private Date back_date;
 
-    public void setReaderId(int readerId) {
-        this.readerId = readerId;
-    }
-
-    public void setBookId(long bookId) {
-        this.bookId = bookId;
-    }
-
-    public void setBackDate(Date backDate) {
-        this.backDate = backDate;
-    }
-
-    public void setLendDate(Date lendDate) {
-        this.lendDate = lendDate;
+    public long getSernum() {
+        return sernum;
     }
 
     public void setSernum(long sernum) {
         this.sernum = sernum;
     }
 
-    public int getReaderId() {
-        return readerId;
+    public long getBook_id() {
+        return book_id;
     }
 
-    public long getBookId() {
-        return bookId;
+    public void setBook_id(long book_id) {
+        this.book_id = book_id;
     }
 
-    public Date getBackDate() {
-        return backDate;
+    public int getReader_id() {
+        return reader_id;
     }
 
-    public Date getLendDate() {
-        return lendDate;
+    public void setReader_id(int reader_id) {
+        this.reader_id = reader_id;
     }
 
-    public long getSernum() {
-        return sernum;
+    public Date getLend_date() {
+        return lend_date;
+    }
+
+    public void setLend_date(Date lend_date) {
+        this.lend_date = lend_date;
+    }
+
+    public Date getBack_date() {
+        return back_date;
+    }
+
+    public void setBack_date(Date back_date) {
+        this.back_date = back_date;
     }
 }

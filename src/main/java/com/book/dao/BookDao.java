@@ -20,8 +20,7 @@ public interface BookDao {
     @Delete("delete from book_info where book_id = #{id}  ")
     int deleteBook(@Param("id") long bookId);
 
-    //TODO getAmount
-    @Insert("INSERT INTO book_info VALUES(NULL ,#{name},#{author},#{publish},#{isbn},#{introduction},#{language},#{price},#{pubdate},#{classId},#{pressmark},#{state})")
+    @Insert("INSERT INTO book_info VALUES(NULL ,#{name},#{author},#{publish},#{isbn},#{introduction},#{language},#{price},#{pubdate},#{class_id},#{pressmark},#{state},#{amount})")
     int addBook(Book book);
 
     //根据书号查询图书
@@ -29,7 +28,7 @@ public interface BookDao {
     Book getBook(@Param("id") Long bookId);
 
     //TODO getAmount ?
-    @Update("update book_info set name= #{name} ,author= #{author} ,publish= #{publish} ,ISBN= #{isbn} ,introduction= #{introduction} ,language= #{language},price= ? ,pubdate= #{price} ,class_id= #{classId} ,pressmark= #{pressmark} ,state= #{state})  where book_id= #{bookId})")
+    @Update("update book_info set name= #{name} ,author= #{author} ,publish= #{publish} ,ISBN= #{isbn} ,introduction= #{introduction} ,language= #{language},price= #{price} ,pubdate= #{pubdate} ,class_id= #{class_id} ,pressmark= #{pressmark} ,state= #{state})  where book_id= #{book_id})")
     int editBook(Book book);
 
 

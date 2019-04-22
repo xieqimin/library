@@ -25,7 +25,11 @@ public interface LendDao {
     @Select("SELECT * FROM lend_list WHERE reader_id = #{id} ")
     List<Lend> myLendList(@Param("id") int readerId);
 
-    //TODO add getAmount
+    // add bookAmount
+    @Update("update book_info set amount= amount +1 where book_id = #{id}")
+    int addAmount(@Param("id") long bookId);
 
     //TODO sub getAmount
+    @Update("update book_info set amount= amount -1 where book_id = #{id} and amount >=1")
+    int subAmount(@Param("id") long bookId);
 }

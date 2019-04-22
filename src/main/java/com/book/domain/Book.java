@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Book implements Serializable{
 
-    private long bookId;
+    private long book_id;
     private String name;
     private String author;
     private String publish;
@@ -15,10 +15,106 @@ public class Book implements Serializable{
     private String language;
     private BigDecimal price;
     private Date pubdate;
-    private int classId;
+    private int class_id;
     private int pressmark;
     private int state;
     private int amount;
+
+    public long getBook_id() {
+        return book_id;
+    }
+
+    public void setBook_id(long book_id) {
+        this.book_id = book_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getPublish() {
+        return publish;
+    }
+
+    public void setPublish(String publish) {
+        this.publish = publish;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Date getPubdate() {
+        return pubdate;
+    }
+
+    public void setPubdate(Date pubdate) {
+        this.pubdate = pubdate;
+    }
+
+    public int getClass_id() {
+        return class_id;
+    }
+
+    public void setClass_id(int class_id) {
+        this.class_id = class_id;
+    }
+
+    public int getPressmark() {
+        return pressmark;
+    }
+
+    public void setPressmark(int pressmark) {
+        this.pressmark = pressmark;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
 
     public int getAmount() {
         return amount;
@@ -28,104 +124,8 @@ public class Book implements Serializable{
         this.amount = amount;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setClassId(int classId) {
-        this.classId = classId;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public void setBookId(long bookId) {
-        this.bookId = bookId;
-    }
-
-    public void setPubdate(Date pubdate) {
-        this.pubdate = pubdate;
-    }
-
-    public void setPublish(String publish) {
-        this.publish = publish;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public void setPressmark(int pressmark) {
-        this.pressmark = pressmark;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public long getBookId() {
-        return bookId;
-    }
-
-    public int getClassId() {
-        return classId;
-    }
-
-    public Date getPubdate() {
-        return pubdate;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public int getPressmark() {
-        return pressmark;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public int getState() {
-        return state;
-    }
-
-    public String getPublish() {
-        return publish;
-    }
-
     @Override
     public String toString() {
-        return "这本书的信息为"+pressmark+pubdate+bookId+name+author+publish+isbn+introduction+language+price+classId+state;
+        return "这本书的信息为"+pressmark+pubdate+book_id+name+author+publish+isbn+introduction+language+price+class_id+state;
     }
 }

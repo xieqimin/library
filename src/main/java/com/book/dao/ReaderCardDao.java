@@ -18,7 +18,7 @@ public interface ReaderCardDao {
     @Update("UPDATE reader_card set passwd = #{pw} where reader_id = #{id} ")
     int rePassword(@Param("id") int readerId,@Param("pw") String newPasswd);
 
-    @Insert("INSERT INTO reader_card (reader_id,name) values ( #{readerId} , #{name})")
+    @Insert("INSERT INTO reader_card (reader_id,name) values ( #{reader_id} , #{name})")
     int addReaderCard(ReaderInfo readerInfo);
 
     @Update("UPDATE reader_card set name = #{name} where reader_id = #{id}")
