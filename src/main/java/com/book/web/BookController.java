@@ -86,14 +86,14 @@ public class BookController {
     @RequestMapping("/book_add_do.html")
     public String addBookDo(BookAddCommand bookAddCommand,RedirectAttributes redirectAttributes){
         Book book=new Book();
-        book.setBookId(0);
+        book.setBook_id(0);
         book.setPrice(bookAddCommand.getPrice());
         book.setState(bookAddCommand.getState());
         book.setPublish(bookAddCommand.getPublish());
         book.setPubdate(bookAddCommand.getPubdate());
         book.setName(bookAddCommand.getName());
         book.setIsbn(bookAddCommand.getIsbn());
-        book.setClassId(bookAddCommand.getClassId());
+        book.setClass_id(bookAddCommand.getClassId());
         book.setAuthor(bookAddCommand.getAuthor());
         book.setIntroduction(bookAddCommand.getIntroduction());
         book.setPressmark(bookAddCommand.getPressmark());
@@ -160,14 +160,14 @@ public class BookController {
     public String bookEditDo(HttpServletRequest request,BookAddCommand bookAddCommand,RedirectAttributes redirectAttributes){
         long bookId=Integer.parseInt( request.getParameter("id"));
         Book book=new Book();
-        book.setBookId(bookId);
+        book.setBook_id(bookId);
         book.setPrice(bookAddCommand.getPrice());
         book.setState(bookAddCommand.getState());
         book.setPublish(bookAddCommand.getPublish());
         book.setPubdate(bookAddCommand.getPubdate());
         book.setName(bookAddCommand.getName());
         book.setIsbn(bookAddCommand.getIsbn());
-        book.setClassId(bookAddCommand.getClassId());
+        book.setClass_id(bookAddCommand.getClassId());
         book.setAuthor(bookAddCommand.getAuthor());
         book.setIntroduction(bookAddCommand.getIntroduction());
         book.setPressmark(bookAddCommand.getPressmark());

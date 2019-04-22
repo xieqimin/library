@@ -64,7 +64,7 @@ public class ReaderController {
     @RequestMapping("/reader_info.html")
     public ModelAndView toReaderInfo(HttpServletRequest request) {
         ReaderCard readerCard=(ReaderCard) request.getSession().getAttribute("readercard");
-        ReaderInfo readerInfo=readerInfoService.getReaderInfo(readerCard.getReaderId());
+        ReaderInfo readerInfo=readerInfoService.getReaderInfo(readerCard.getReader_id());
         ModelAndView modelAndView=new ModelAndView("reader_info");
         modelAndView.addObject("readerinfo",readerInfo);
         return modelAndView;
@@ -97,7 +97,7 @@ public class ReaderController {
             readerInfo.setAddress(address);
             readerInfo.setBirth(nbirth);
             readerInfo.setName(name);
-            readerInfo.setReaderId(readerId);
+            readerInfo.setReader_id(readerId);
             readerInfo.setTelcode(telcode);
             readerInfo.setSex(sex);
             boolean succ=readerInfoService.editReaderInfo(readerInfo);
@@ -123,7 +123,7 @@ public class ReaderController {
             readerInfo.setAddress(address);
             readerInfo.setBirth(nbirth);
             readerInfo.setName(name);
-            readerInfo.setReaderId(readerId);
+            readerInfo.setReader_id(readerId);
             readerInfo.setTelcode(telcode);
             readerInfo.setSex(sex);
 
@@ -155,7 +155,7 @@ public class ReaderController {
     @RequestMapping("reader_repasswd_do.html")
     public String readerRePasswdDo(HttpServletRequest request,String oldPasswd,String newPasswd,String reNewPasswd,RedirectAttributes redirectAttributes){
         ReaderCard readerCard=(ReaderCard) request.getSession().getAttribute("readercard");
-        int readerId=readerCard.getReaderId();
+        int readerId=readerCard.getReader_id();
         String passwd=readerCard.getPasswd();
 
         if (newPasswd.equals(reNewPasswd)){
@@ -202,7 +202,7 @@ public class ReaderController {
         readerInfo.setAddress(address);
         readerInfo.setBirth(nbirth);
         readerInfo.setName(name);
-        readerInfo.setReaderId(readerId);
+        readerInfo.setReader_id(readerId);
         readerInfo.setTelcode(telcode);
         readerInfo.setSex(sex);
         boolean succ=readerInfoService.addReaderInfo(readerInfo);
@@ -220,7 +220,7 @@ public class ReaderController {
     @RequestMapping("reader_info_edit.html")
     public ModelAndView readerInfoEditReader(HttpServletRequest request){
         ReaderCard readerCard=(ReaderCard) request.getSession().getAttribute("readercard");
-        ReaderInfo readerInfo=readerInfoService.getReaderInfo(readerCard.getReaderId());
+        ReaderInfo readerInfo=readerInfoService.getReaderInfo(readerCard.getReader_id());
         ModelAndView modelAndView=new ModelAndView("reader_info_edit");
         modelAndView.addObject("readerinfo",readerInfo);
         return modelAndView;
@@ -230,7 +230,7 @@ public class ReaderController {
     public String readerInfoEditDoReader(HttpServletRequest request,String name,String sex,String birth,String address,String telcode,RedirectAttributes redirectAttributes){
         ReaderCard readerCard=(ReaderCard) request.getSession().getAttribute("readercard");
         if (!readerCard.getName().equals(name)){
-            boolean succo=readerCardService.updateName(readerCard.getReaderId(),name);
+            boolean succo=readerCardService.updateName(readerCard.getReader_id(),name);
             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
             Date nbirth=new Date();
             try{
@@ -244,13 +244,13 @@ public class ReaderController {
             readerInfo.setAddress(address);
             readerInfo.setBirth(nbirth);
             readerInfo.setName(name);
-            readerInfo.setReaderId(readerCard.getReaderId());
+            readerInfo.setReader_id(readerCard.getReader_id());
             readerInfo.setTelcode(telcode);
             readerInfo.setSex(sex);
 
             boolean succ=readerInfoService.editReaderInfo(readerInfo);
             if(succ&&succo){
-                ReaderCard readerCardNew = loginService.findReaderCardByUserId(readerCard.getReaderId());
+                ReaderCard readerCardNew = loginService.findReaderCardByUserId(readerCard.getReader_id());
                 request.getSession().setAttribute("readercard", readerCardNew);
                 redirectAttributes.addFlashAttribute("succ", "信息修改成功！");
                 return "redirect:/reader_info.html";
@@ -275,13 +275,13 @@ public class ReaderController {
             readerInfo.setAddress(address);
             readerInfo.setBirth(nbirth);
             readerInfo.setName(name);
-            readerInfo.setReaderId(readerCard.getReaderId());
+            readerInfo.setReader_id(readerCard.getReader_id());
             readerInfo.setTelcode(telcode);
             readerInfo.setSex(sex);
 
             boolean succ=readerInfoService.editReaderInfo(readerInfo);
             if(succ){
-                ReaderCard readerCardNew = loginService.findReaderCardByUserId(readerCard.getReaderId());
+                ReaderCard readerCardNew = loginService.findReaderCardByUserId(readerCard.getReader_id());
                 request.getSession().setAttribute("readercard", readerCardNew);
                 redirectAttributes.addFlashAttribute("succ", "信息修改成功！");
                 return "redirect:/reader_info.html";

@@ -57,7 +57,7 @@ public class LoginController {
                     res.put("msg","账号或密码错误！");
                 } else if(isAdmin){
                     Admin admin=new Admin();
-                    admin.setAdminId(id);
+                    admin.setAdmin_id(id);
                     admin.setPassword(passwd);
                     request.getSession().setAttribute("admin",admin);
                     res.put("stateCode", "1");
@@ -95,7 +95,7 @@ public class LoginController {
     public String reAdminPasswdDo(HttpServletRequest request,String oldPasswd,String newPasswd,String reNewPasswd,RedirectAttributes redirectAttributes ) {
 
         Admin admin=(Admin) request.getSession().getAttribute("admin");
-        int id=admin.getAdminId();
+        int id=admin.getAdmin_id();
         String passwd=loginService.getAdminPasswd(id);
 
         if(passwd.equals(oldPasswd)){
