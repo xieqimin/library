@@ -18,6 +18,15 @@ public class Book implements Serializable{
     private int classId;
     private int pressmark;
     private int state;
+    private int amount;
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public void setName(String name) {
         this.name = name;

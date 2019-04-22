@@ -24,4 +24,8 @@ public interface LendDao {
 
     @Select("SELECT * FROM lend_list WHERE reader_id = #{id} ")
     List<Lend> myLendList(@Param("id") int readerId);
+
+    //TODO add getAmount
+
+    //TODO sub getAmount
 }
