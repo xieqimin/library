@@ -67,7 +67,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>&nbsp;${admin.adminId}，已登录</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>&nbsp;${admin.admin_id}，已登录</a></li>
                 <li><a href="logout.html"><span class="glyphicon glyphicon-log-in"></span>&nbsp;退出</a></li>
             </ul>
         </div>
@@ -139,8 +139,8 @@
             <c:forEach items="${list}" var="alog">
                 <tr>
                     <td><c:out value="${alog.sernum}"></c:out></td>
-                    <td><c:out value="${alog.bookId}"></c:out></td>
-                    <td><c:out value="${alog.readerId}"></c:out></td>
+                    <td><c:out value="${alog.book_id}"></c:out></td>
+                    <td><c:out value="${alog.reader_id}"></c:out></td>
                     <td><c:out value="${alog.lendDate}"></c:out></td>
                     <td><c:out value="${alog.backDate}"></c:out></td>
                     <td><a href="deletebook.html?bookId=<c:out value="${alog.sernum}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>

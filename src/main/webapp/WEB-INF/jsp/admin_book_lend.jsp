@@ -65,7 +65,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>&nbsp;${admin.adminId}，已登录</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>&nbsp;${admin.admin_id}，已登录</a></li>
                 <li><a href="logout.html"><span class="glyphicon glyphicon-log-in"></span>&nbsp;退出</a></li>
             </ul>
         </div>
@@ -78,7 +78,7 @@
             <h3 class="panel-title">借阅《 ${book.name}》</h3>
         </div>
         <div class="panel-body">
-            <form action="lendbookdo.html?id=${book.bookId}" method="post" id="lendbook" >
+            <form action="lendbookdo.html?id=${book.book_id}" method="post" id="lendbook" >
                 <div class="input-group">
                     <span  class="input-group-addon">书名</span>
                     <input type="text" readonly="readonly" class="form-control" name="name" id="name" value="${book.name}">

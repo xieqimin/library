@@ -29,7 +29,10 @@ public interface LendDao {
     @Update("update book_info set amount= amount +1 where book_id = #{id}")
     int addAmount(@Param("id") long bookId);
 
-    //TODO sub getAmount
+
     @Update("update book_info set amount= amount -1 where book_id = #{id} and amount >=1")
     int subAmount(@Param("id") long bookId);
+
+    @Select("select amount from book_info where book_id = #{id}")
+    int getAmount(@Param("id") long bookId);
 }
