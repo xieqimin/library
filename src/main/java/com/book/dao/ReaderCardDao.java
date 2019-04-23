@@ -18,7 +18,8 @@ public interface ReaderCardDao {
     @Update("UPDATE reader_card set passwd = #{pw} where reader_id = #{id} ")
     int rePassword(@Param("id") int readerId,@Param("pw") String newPasswd);
 
-    @Insert("INSERT INTO reader_card (reader_id,name) values ( #{reader_id} , #{name})")
+    //插入读者信息时默认初始密码为其reader_id
+    @Insert("INSERT INTO reader_card (reader_id,name,passwd,card_state) values ( #{reader_id},#{name},#{reader_id},1)")
     int addReaderCard(ReaderInfo readerInfo);
 
     @Update("UPDATE reader_card set name = #{name} where reader_id = #{id}")

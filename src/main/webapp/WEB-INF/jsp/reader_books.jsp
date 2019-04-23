@@ -55,48 +55,6 @@
 </nav>
 
 
-<div style="padding: 70px 550px 10px">
-    <form   method="post" action="querybook.html" class="form-inline"  id="searchform">
-        <div class="input-group">
-            <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
-            <span class="input-group-btn">
-                            <input type="submit" value="搜索" class="btn btn-default">
-            </span>
-        </div>
-    </form>
-    <script>
-        function mySubmit(flag){
-            return flag;
-        }
-        $("#searchform").submit(function () {
-            var val=$("#search").val();
-            if(val==''){
-                alert("请输入关键字");
-                return mySubmit(false);
-            }
-        })
-    </script>
-</div>
-<div style="position: relative;top: 10%">
-    <c:if test="${!empty succ}">
-        <div class="alert alert-success alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert"
-                    aria-hidden="true">
-                &times;
-            </button>
-                ${succ}
-        </div>
-    </c:if>
-    <c:if test="${!empty error}">
-        <div class="alert alert-danger alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert"
-                    aria-hidden="true">
-                &times;
-            </button>
-                ${error}
-        </div>
-    </c:if>
-</div>
 <div class="panel panel-default" style="width: 90%;margin-left: 5%">
     <div class="panel-heading" style="background-color: #fff">
         <h3 class="panel-title">

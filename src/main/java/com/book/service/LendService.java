@@ -20,11 +20,20 @@ public class LendService {
     private SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
     @Transactional
-    public boolean bookReturn(long bookId){
-        lendDao.addAmount(bookId);
-        return lendDao.bookReturnOne(df.format(new Date()),bookId)>0 && lendDao.bookReturnTwo(bookId)>0;
+    public boolean bookReturn(long bookId,long readerId){
+        // update bookReturnOne 可以归还 return 1
+        //应该先查询是否借阅
+
+        if(lendDao.bookReturnOne(df.format(new Date()),bookId,readerId)>0){
+            lendDao.addAmount(bookId);
+            lendDao.bookReturnTwo(bookId);
+            return true;
+        }else {
+            return false;
+        }
     }
 
+    //TODO bug 同一人可以借多本相同内容的书籍
     @Transactional
     public boolean bookLend(long bookId,int readerId){
         // Amount==0 返回0
