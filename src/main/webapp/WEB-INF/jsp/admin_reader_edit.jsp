@@ -75,14 +75,14 @@
 <div class="col-xs-6 col-md-offset-3" style="position: relative;top: 10%">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">编辑读者信息《 ${readerInfo.readerId}》</h3>
+            <h3 class="panel-title">编辑读者信息《 ${readerInfo.reader_id}》</h3>
         </div>
         <div class="panel-body">
-            <form action="reader_edit_do.html?id=${readerInfo.readerId}" method="post" id="readeredit" >
+            <form action="reader_edit_do.html?id=${readerInfo.reader_id}" method="post" id="readeredit" >
 
                 <div class="input-group">
                     <span  class="input-group-addon">读者证号</span>
-                    <input readonly="readonly" type="text" class="form-control" name="readerId" id="readerId" value="${readerInfo.readerId}">
+                    <input readonly="readonly" type="text" class="form-control" name="readerId" id="readerId" value="${readerInfo.reader_id}">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">姓名</span>

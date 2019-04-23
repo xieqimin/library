@@ -118,7 +118,10 @@
                     <label for="state">状态</label>
                     <input type="text" class="form-control"  name="state"  id="state"   placeholder="请输入图书状态">
                 </div>
-
+                <div class="form-group">
+                    <label for="state">数量</label>
+                    <input type="text" class="form-control"  name="state"  id="amount"   placeholder="请输入图书数量">
+                </div>
 
                 <input type="submit" value="添加" class="btn btn-success btn-sm" class="text-left">
                 <script>

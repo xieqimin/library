@@ -114,19 +114,23 @@
                 </tr>
                 <tr>
                     <th>分类号</th>
-                    <td>${detail.classId}</td>
+                    <td>${detail.class_id}</td>
                 </tr>
                 <tr>
                     <th>书架号</th>
                     <td>${detail.pressmark}</td>
                 </tr>
                 <tr>
+                    <th>数量</th>
+                    <td>${detail.amount}</td>
+                </tr>
+                <tr>
                     <th>状态</th>
                     <c:if test="${detail.state==1}">
-                        <td>在馆</td>
+                        <td>可借</td>
                     </c:if>
                     <c:if test="${detail.state==0}">
-                        <td>借出</td>
+                        <td>不可借</td>
                     </c:if>
 
                 </tr>

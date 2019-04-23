@@ -141,8 +141,8 @@
                     <td><c:out value="${alog.sernum}"></c:out></td>
                     <td><c:out value="${alog.book_id}"></c:out></td>
                     <td><c:out value="${alog.reader_id}"></c:out></td>
-                    <td><c:out value="${alog.lendDate}"></c:out></td>
-                    <td><c:out value="${alog.backDate}"></c:out></td>
+                    <td><c:out value="${alog.lend_date}"></c:out></td>
+                    <td><c:out value="${alog.back_date}"></c:out></td>
                     <td><a href="deletebook.html?bookId=<c:out value="${alog.sernum}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
                 </tr>
             </c:forEach>

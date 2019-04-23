@@ -78,7 +78,7 @@
             <h3 class="panel-title">编辑《 ${detail.name}》</h3>
         </div>
         <div class="panel-body">
-            <form action="book_edit_do.html?id=${detail.bookId}" method="post" id="addbook" >
+            <form action="book_edit_do.html?id=${detail.book_id}" method="post" id="addbook" >
 
                 <div class="input-group">
                     <span  class="input-group-addon">书名</span>
@@ -123,6 +123,10 @@
                 <div class="input-group">
                     <span  class="input-group-addon">状态</span>
                     <input type="text" class="form-control" name="state"  id="state" value="${detail.state}">
+                </div>
+                <div class="input-group">
+                    <span  class="input-group-addon">数量</span>
+                    <input type="text" class="form-control" name="state"  id="state" value="${detail.amount}">
                 </div>
                 <input type="submit" value="确定" class="btn btn-success btn-sm" class="text-left">
                 <script>

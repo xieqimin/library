@@ -1,5 +1,5 @@
 # library
-$ git clone https://github.com/withstars/Books-Management-System
+$ git clone 
 
 $ cd Books-Management-System
 

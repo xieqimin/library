@@ -43,7 +43,7 @@ public class LendController {
             redirectAttributes.addFlashAttribute("succ", "图书借阅成功！");
             return "redirect:/allbooks.html";
         }else {
-            redirectAttributes.addFlashAttribute("fail", "图书借阅失败！");
+            redirectAttributes.addFlashAttribute("succ", "图书借阅失败！");
             return "redirect:/allbooks.html";
         }
 
