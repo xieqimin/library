@@ -103,7 +103,7 @@ public class LoginController {
             if (succ){
 
                 redirectAttributes.addFlashAttribute("succ", "密码修改成功！");
-                return "redirect:/admin_repasswd.html";
+                return "redirect:/admin_main.html";
             }
             else {
                 redirectAttributes.addFlashAttribute("error", "密码修改失败！");

@@ -1,7 +1,9 @@
 package com.book.web;
 
+import com.book.domain.Book;
 import com.book.domain.ReaderCard;
 import com.book.domain.ReaderInfo;
+import com.book.service.BookService;
 import com.book.service.LoginService;
 import com.book.service.ReaderCardService;
 import com.book.service.ReaderInfoService;
@@ -20,6 +22,8 @@ import java.util.Date;
 
 @Controller
 public class ReaderController {
+    @Autowired
+    private BookService bookService;
 
     private ReaderInfoService readerInfoService;
     @Autowired
@@ -37,6 +41,14 @@ public class ReaderController {
     @Autowired
     public void setReaderCardService(ReaderCardService readerCardService) {
         this.readerCardService = readerCardService;
+    }
+
+    @RequestMapping("/readerbooks.html")
+    public ModelAndView readerAllBook(){
+        List<Book> books=bookService.getAllBooks();
+        ModelAndView modelAndView=new ModelAndView("reader_books");
+        modelAndView.addObject("books",books);
+        return modelAndView;
     }
 
     @RequestMapping("allreaders.html")

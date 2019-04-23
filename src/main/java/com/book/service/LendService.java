@@ -28,8 +28,8 @@ public class LendService {
     @Transactional
     public boolean bookLend(long bookId,int readerId){
         // Amount==0 返回0
-        if(lendDao.subAmount(readerId)>0) {
-            int amount=lendDao.getAmount(readerId);
+        if(lendDao.subAmount(bookId)>0) {
+            int amount=lendDao.getAmount(bookId);
             if(amount==0){
                 lendDao.bookLendTwo(bookId);
             }

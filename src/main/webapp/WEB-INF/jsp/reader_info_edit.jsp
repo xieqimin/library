@@ -20,7 +20,8 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active">
+                <li><a href="/readerbooks.html">全部图书</a></li>
+                <li >
                     <a href="reader_querybook.html" >
                         图书查询
                     </a>
@@ -60,7 +61,7 @@
 
                 <div class="input-group">
                     <span  class="input-group-addon">读者证号</span>
-                    <input type="text" readonly="readonly" class="form-control" name="readerId" id="readerId" value="${readerinfo.readerId}">
+                    <input type="text" readonly="readonly" class="form-control" name="reader_id" id="reader_id" value="${readerinfo.reader_id}">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">姓名</span>

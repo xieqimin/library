@@ -28,7 +28,7 @@ public interface BookDao {
     Book getBook(@Param("id") Long bookId);
 
     //TODO getAmount ?
-    @Update("update book_info set name= #{name} ,author= #{author} ,publish= #{publish} ,ISBN= #{isbn} ,introduction= #{introduction} ,language= #{language},price= #{price} ,pubdate= #{pubdate} ,class_id= #{class_id} ,pressmark= #{pressmark} ,state= #{state})  where book_id= #{book_id})")
+    @Update("update book_info set name= #{name} ,author= #{author} ,publish= #{publish} ,ISBN= #{isbn} ,introduction= #{introduction} ,language= #{language},price= #{price} ,pubdate= #{pubdate} ,class_id= #{class_id} ,pressmark= #{pressmark} ,state= #{state} ,amount =#{amount} where book_id= #{book_id}")
     int editBook(Book book);
 
 

@@ -62,6 +62,7 @@ public class BookController {
         modelAndView.addObject("books",books);
         return modelAndView;
     }
+
     @RequestMapping("/deletebook.html")
     public String deleteBook(HttpServletRequest request,RedirectAttributes redirectAttributes){
         long bookId=Integer.parseInt(request.getParameter("bookId"));
@@ -98,44 +99,9 @@ public class BookController {
         book.setIntroduction(bookAddCommand.getIntroduction());
         book.setPressmark(bookAddCommand.getPressmark());
         book.setLanguage(bookAddCommand.getLanguage());
-
+        book.setAmount(bookAddCommand.getAmount());
 
         boolean succ=bookService.addBook(book);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         List<Book> books=bookService.getAllBooks();
         if (succ){
             redirectAttributes.addFlashAttribute("succ", "图书添加成功！");
@@ -172,7 +138,7 @@ public class BookController {
         book.setIntroduction(bookAddCommand.getIntroduction());
         book.setPressmark(bookAddCommand.getPressmark());
         book.setLanguage(bookAddCommand.getLanguage());
-
+        book.setAmount(bookAddCommand.getAmount());
 
         boolean succ=bookService.editBook(book);
         if (succ){

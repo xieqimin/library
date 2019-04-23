@@ -28,6 +28,7 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
+                <li><a href="/readerbooks.html">全部图书</a></li>
                 <li >
                     <a href="reader_querybook.html" >
                         图书查询
@@ -99,13 +100,13 @@
             <tbody>
             <c:forEach items="${list}" var="alog">
                 <tr>
-                    <td><c:out value="${alog.bookId}"></c:out></td>
-                    <td><c:out value="${alog.lendDate}"></c:out></td>
-                    <td><c:out value="${alog.backDate}"></c:out></td>
-                    <c:if test="${empty alog.backDate}">
+                    <td><c:out value="${alog.book_id}"></c:out></td>
+                    <td><c:out value="${alog.lend_date}"></c:out></td>
+                    <td><c:out value="${alog.back_date}"></c:out></td>
+                    <c:if test="${empty alog.back_date}">
                         <td>未还</td>
                     </c:if>
-                    <c:if test="${!empty alog.backDate}">
+                    <c:if test="${!empty alog.back_date}">
                         <td>已还</td>
                     </c:if>
                     <c:if test="">

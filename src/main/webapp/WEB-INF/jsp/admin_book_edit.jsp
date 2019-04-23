@@ -114,7 +114,7 @@
                 </div>
                 <div class="input-group">
                     <span  class="input-group-addon">分类号</span>
-                    <input type="text" class="form-control" name="classId" id="classId" value="${detail.classId}">
+                    <input type="text" class="form-control" name="classId" id="classId" value="${detail.class_id}">
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon">书架号</span>
@@ -126,7 +126,7 @@
                 </div>
                 <div class="input-group">
                     <span  class="input-group-addon">数量</span>
-                    <input type="text" class="form-control" name="state"  id="state" value="${detail.amount}">
+                    <input type="text" class="form-control" name="amount"  id="amount" value="${detail.amount}">
                 </div>
                 <input type="submit" value="确定" class="btn btn-success btn-sm" class="text-left">
                 <script>

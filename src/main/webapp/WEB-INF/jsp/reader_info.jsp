@@ -27,6 +27,7 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
+                <li><a href="/readerbooks.html">全部图书</a></li>
                 <li >
                     <a href="reader_querybook.html" >
                         图书查询
@@ -84,7 +85,7 @@
             <table class="table table-hover">
                 <tr>
                     <th width="20%">读者证号</th>
-                    <td>${readerinfo.readerId}</td>
+                    <td>${readerinfo.reader_id}</td>
                 </tr>
                 <tr>
                     <th>姓名</th>

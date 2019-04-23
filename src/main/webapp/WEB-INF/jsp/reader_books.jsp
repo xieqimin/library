@@ -28,13 +28,9 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/readerbooks.html">全部图书</a></li>
-                <li class="active">
-                    <a href="reader_querybook.html" >
-                        图书查询
-                    </a>
-                </li>
-                <li>
+                <li class="active"><a href="/readerbooks.html">全部图书</a></li>
+                <li ><a href="reader_querybook.html" >图书查询</a></li>
+                <li >
                     <a href="reader_info.html" >
                         个人信息
                     </a>
@@ -59,10 +55,10 @@
 </nav>
 
 
-<div style="padding: 30px 550px 10px">
-    <form   method="post" action="reader_querybook_do.html" class="form-inline"  id="searchform">
+<div style="padding: 70px 550px 10px">
+    <form   method="post" action="querybook.html" class="form-inline"  id="searchform">
         <div class="input-group">
-            <input type="text" placeholder="输入图书号或图书名" class="form-control" id="search" name="searchWord" class="form-control">
+            <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
             <span class="input-group-btn">
                             <input type="submit" value="搜索" class="btn btn-default">
             </span>
@@ -101,56 +97,48 @@
         </div>
     </c:if>
 </div>
-<c:if test="${!empty books}">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                查询结果：
-            </h3>
-        </div>
-        <div class="panel-body">
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>书名</th>
-                    <th>作者</th>
-                    <th>出版社</th>
-                    <th>ISBN</th>
-                    <th>价格</th>
-                    <th>状态</th>
-                    <th>详情</th>
-                    <th>借阅</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${books}" var="book">
-                    <tr>
-                        <td><c:out value="${book.name}"></c:out></td>
-                        <td><c:out value="${book.author}"></c:out></td>
-                        <td><c:out value="${book.publish}"></c:out></td>
-                        <td><c:out value="${book.isbn}"></c:out></td>
-                        <td><c:out value="${book.price}"></c:out></td>
-                        <c:if test="${book.state==1}">
-                            <td>可借</td>
-                        </c:if>
-                        <c:if test="${book.state==0}">
-                            <td>不可借</td>
-                        </c:if>
-                        <td><a href="readerbookdetail.html?book_id=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-success btn-xs">详情</button></a></td>
-                        <c:if test="${book.state==1}">
-                            <td><a href="lendbook.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">可借阅</button></a></td>
-                        </c:if>
-                        <c:if test="${book.state==0}">
-                            <td><button type="button" class="btn btn-primary btn-xs">不可借阅</button></td>
-                        </c:if>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-        </div>
+<div class="panel panel-default" style="width: 90%;margin-left: 5%">
+    <div class="panel-heading" style="background-color: #fff">
+        <h3 class="panel-title">
+            全部图书
+        </h3>
     </div>
-</c:if>
+    <div class="panel-body">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>ISBN</th>
+                <th>价格</th>
+                <th>数量</th>
+                <th>借阅</th>
 
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${books}" var="book">
+                <tr>
+                    <td><c:out value="${book.name}"></c:out></td>
+                    <td><c:out value="${book.author}"></c:out></td>
+                    <td><c:out value="${book.publish}"></c:out></td>
+                    <td><c:out value="${book.isbn}"></c:out></td>
+                    <td><c:out value="${book.price}"></c:out></td>
+                    <td><c:out value="${book.amount}"></c:out></td>
+                    <c:if test="${book.state==1}">
+                        <td><a href="lendbook.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">可借阅</button></a></td>
+                    </c:if>
+                    <c:if test="${book.state==0}">
+                        <td><button type="button" class="btn btn-primary btn-xs">不可借阅</button></td>
+                    </c:if>
+
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 </body>
 </html>
