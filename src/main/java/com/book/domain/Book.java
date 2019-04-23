@@ -14,6 +14,8 @@ public class Book implements Serializable{
     private String introduction;
     private String language;
     private BigDecimal price;
+
+    //TODO 显示
     private Date pubdate;
     private int class_id;
     private int pressmark;

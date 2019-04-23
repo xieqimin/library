@@ -34,7 +34,20 @@ public class LendController {
        modelAndView.addObject("book",book);
        return modelAndView;
     }
+    //TODO reader_id AND new view
 
+    @RequestMapping("/readerlendbook.html")
+    public ModelAndView readerbookLend(HttpServletRequest request){
+
+        long bookId=Integer.parseInt(request.getParameter("bookId"));
+        Book book=bookService.getBook(bookId);
+        ModelAndView modelAndView=new ModelAndView("reader_book_lend");
+        modelAndView.addObject("book",book);
+        return modelAndView;
+    }
+
+
+    //TODO new reader_lend
     @RequestMapping("/lendbookdo.html")
     public String bookLendDo(HttpServletRequest request,RedirectAttributes redirectAttributes,int readerId){
         long bookId=Integer.parseInt(request.getParameter("id"));
@@ -46,9 +59,9 @@ public class LendController {
             redirectAttributes.addFlashAttribute("succ", "图书借阅失败！");
             return "redirect:/allbooks.html";
         }
-
-
     }
+
+
     @RequestMapping("/returnbookdo.html")
     public String bookReturnDo(HttpServletRequest request,RedirectAttributes redirectAttributes,int readerId){
         long bookId=Integer.parseInt(request.getParameter("id"));
