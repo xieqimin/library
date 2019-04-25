@@ -1,10 +1,4 @@
-<%@ page import="com.book.domain.Book" %><%--
-  Created by IntelliJ IDEA.
-  User: 君行天下
-  Date: 2017/7/24
-  Time: 19:25
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.book.domain.Book" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -54,7 +48,26 @@
     </div>
 </nav>
 
-
+<div style="position: relative;top: 10%">
+    <c:if test="${!empty succ}">
+        <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+                ${succ}
+        </div>
+    </c:if>
+    <c:if test="${!empty error}">
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+                ${error}
+        </div>
+    </c:if>
+</div>
 <div class="panel panel-default" style="width: 90%;margin-left: 5%">
     <div class="panel-heading" style="background-color: #fff">
         <h3 class="panel-title">
@@ -85,7 +98,7 @@
                     <td><c:out value="${book.price}"></c:out></td>
                     <td><c:out value="${book.amount}"></c:out></td>
                     <c:if test="${book.state==1}">
-                        <td><a href="lendbook.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">可借阅</button></a></td>
+                        <td><a href="readerlendbook.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">可借阅</button></a></td>
                     </c:if>
                     <c:if test="${book.state==0}">
                         <td><button type="button" class="btn btn-primary btn-xs">不可借阅</button></td>

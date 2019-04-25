@@ -138,7 +138,7 @@
                         </c:if>
                         <td><a href="readerbookdetail.html?book_id=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-success btn-xs">详情</button></a></td>
                         <c:if test="${book.state==1}">
-                            <td><a href="lendbook.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">可借阅</button></a></td>
+                            <td><a href="readerlendbook.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">可借阅</button></a></td>
                         </c:if>
                         <c:if test="${book.state==0}">
                             <td><button type="button" class="btn btn-primary btn-xs">不可借阅</button></td>
