@@ -2,6 +2,7 @@ package com.book.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Book implements Serializable{
@@ -86,8 +87,9 @@ public class Book implements Serializable{
         this.price = price;
     }
 
-    public Date getPubdate() {
-        return pubdate;
+    public String getPubdate() {
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(pubdate);
     }
 
     public void setPubdate(Date pubdate) {

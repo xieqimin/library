@@ -1,6 +1,7 @@
 package com.book.domain;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ReaderInfo implements Serializable{
@@ -36,8 +37,9 @@ public class ReaderInfo implements Serializable{
         this.sex = sex;
     }
 
-    public Date getBirth() {
-        return birth;
+    public String getBirth() {
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(birth);
     }
 
     public void setBirth(Date birth) {
