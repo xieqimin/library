@@ -23,8 +23,10 @@ public class BookController {
         this.bookService = bookService;
     }
 
+    //TODO no match
     @RequestMapping("/querybook.html")
     public ModelAndView queryBookDo(HttpServletRequest request,String searchWord){
+        System.out.println("searchWord"+searchWord);
         boolean exist=bookService.matchBook(searchWord);
         if (exist){
             List<Book> books = bookService.queryBook(searchWord);

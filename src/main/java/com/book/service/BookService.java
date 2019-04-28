@@ -15,6 +15,7 @@ public class BookService {
 
     public List<Book> queryBook(String searchWord){
         String word="%"+searchWord+"%";
+        System.out.println("word"+word);
         return  bookDao.queryBook(word);
     }
 
@@ -28,6 +29,8 @@ public class BookService {
 
     public boolean matchBook(String searchWord){
         String word="%"+searchWord+"%";
+        System.out.println("word"+word);
+        System.out.println(bookDao.matchBook(word));
         return bookDao.matchBook(word)>0;
     }
 
