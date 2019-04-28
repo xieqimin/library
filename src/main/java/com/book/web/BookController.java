@@ -1,6 +1,7 @@
 package com.book.web;
 
 import com.book.domain.Book;
+import com.book.domain.BookRank;
 import com.book.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,16 @@ public class BookController {
             return new ModelAndView("admin_books","error","没有匹配的图书");
         }
     }
+
+    @RequestMapping("/bookRank.html")
+    public ModelAndView bookRank(){
+        List<BookRank> books=bookService.getBookRank();
+        ModelAndView modelAndView=new ModelAndView("book_ranking");
+        modelAndView.addObject("books",books);
+        return modelAndView;
+
+    }
+
     @RequestMapping("/reader_querybook.html")
     public ModelAndView readerQueryBook(){
        return new ModelAndView("reader_book_query");

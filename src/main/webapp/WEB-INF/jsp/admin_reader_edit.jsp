@@ -58,6 +58,7 @@
                         <li><a href="lendlist.html">借还日志</a></li>
                     </ul>
                 </li>
+                <li ><a href="bookRank.html" >借阅排行</a></li>
                 <li >
                     <a href="admin_repasswd.html" >
                         密码修改

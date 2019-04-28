@@ -2,6 +2,7 @@ package com.book.service;
 
 import com.book.dao.BookDao;
 import com.book.domain.Book;
+import com.book.domain.BookRank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -40,6 +41,10 @@ public class BookService {
     }
     public boolean editBook(Book book){
         return bookDao.editBook(book)>0;
+    }
+
+    public List<BookRank> getBookRank(){
+        return bookDao.getBookRank();
     }
 
 }
