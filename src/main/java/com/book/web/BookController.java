@@ -54,16 +54,16 @@ public class BookController {
 
     }
     @RequestMapping("/reader_querybook_do.html")
-    public String readerQueryBookDo(HttpServletRequest request,String searchWord,RedirectAttributes redirectAttributes){
+    public ModelAndView readerQueryBookDo(HttpServletRequest request,String searchWord,RedirectAttributes redirectAttributes){
         boolean exist=bookService.matchBook(searchWord);
         if (exist){
             List<Book> books = bookService.queryBook(searchWord);
-            redirectAttributes.addFlashAttribute("books", books);
-            return "redirect:/reader_querybook.html";
+            ModelAndView modelAndView = new ModelAndView("reader_book_query");
+            modelAndView.addObject("books",books);
+            return modelAndView;
         }
         else{
-            redirectAttributes.addFlashAttribute("error", "没有匹配的图书！");
-            return "redirect:/reader_querybook.html";
+            return new ModelAndView("reader_book_query","error","没有匹配的图书");
         }
 
     }
