@@ -1,6 +1,7 @@
 package com.book.dao;
 
 import com.book.domain.Book;
+import com.book.domain.BookRank;
 import org.apache.ibatis.annotations.*;
 import java.util.List;
 
