@@ -94,25 +94,34 @@
     </c:if>
 </div>
 <div class="col-xs-6 col-md-offset-3" style="position: relative;top: 25%">
-    <div class="panel panel-primary " >
-        <div class="panel-heading">
-            <h3 class="panel-title">密码修改</h3>
+    <form class="form-horizontal" method="post" action="admin_repasswd_do"  id="repasswd" >
+        <div class="form-group">
+            <label for="oldPasswd" class="col-sm-2 control-label">旧密码</label>
+            <div class="col-sm-10">
+                <input  class="form-control" type="password" id="oldPasswd" name="oldPasswd" placeholder="输入旧密码">
+            </div>
         </div>
-        <div class="panel-body">
-            <form   method="post" action="admin_repasswd_do" class="form-inline"  id="repasswd" >
-                <div class="input-group">
-                    <input type="password" id="oldPasswd" name="oldPasswd" placeholder="输入旧密码" class="form-control"  class="form-control">
-                    <input type="password" id="newPasswd" name="newPasswd" placeholder="输入新密码" class="form-control"  class="form-control">
-                    <input type="password" id="reNewPasswd" name="reNewPasswd" placeholder="再次输入新密码" class="form-control"  class="form-control">
-                    <em id="tishi" style="color: red"></em>
-                    <br/>
-                    <span>
-                            <input type="submit" value="提交" class="btn btn-default">
-            </span>
-                </div>
-            </form>
+        <div class="form-group">
+            <label for="newPasswd" class="col-sm-2 control-label">新密码</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control"  id="newPasswd" name="newPasswd" placeholder="输入新密码" placeholder="Password">
+            </div>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="reNewPasswd" class="col-sm-2 control-label">确认新密码</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="reNewPasswd" name="reNewPasswd" placeholder="再次输入新密码">
+            </div>
+        </div>
+        <p id="tishi" style="margin-left: 10%;position: absolute"></p><br/>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="提交" class="btn btn-default">
+            </div>
+        </div>
+    </form>
+
+
 </div>
 
     <script>

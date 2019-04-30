@@ -109,15 +109,45 @@
                 </div>
                 <div class="form-group">
                     <label for="classId">分类号</label>
-                    <input type="text" class="form-control" name="classId" id="classId"  placeholder="请输入分类号">
-                </div>
-                <div class="form-group">
-                    <label for="pressmark">书架号</label>
-                    <input type="text" class="form-control"  name="pressmark" id="pressmark" placeholder="请输入书架号">
-                </div>
-                <div class="form-group">
-                    <label for="state">状态</label>
-                    <input type="text" class="form-control"  name="state"  id="state"   placeholder="请输入图书状态">
+                    <!--<input type="text" class="form-control" name="classId" id="classId"  placeholder="请输入分类号">-->
+                     <select id="classId" name="classId" class="form-control" >
+                         <option value="1">马克思主义</option>
+                         <option value="2">哲学</option>
+                         <option value="3">社会科学总论</option>
+                         <option value="4">政治法律</option>
+                         <option value="5">军事</option>
+                         <option value="6">经济</option>
+                         <option value="7">文化</option>
+                         <option value="8">语言</option>
+                         <option value="9">文学</option>
+                         <option value="10">艺术</option>
+                         <option value="11">历史地理</option>
+                         <option value="12">自然科学总论</option>
+                         <option value="13">数理科学和化学</option>
+                         <option value="14">天文学、地球科学</option>
+                         <option value="15">生物科学</option>
+                         <option value="16">医药、卫生</option>
+                         <option value="17">农业科学</option>
+                         <option value="18">工业技术</option>
+                         <option value="19">交通运输</option>
+                         <option value="20">航空、航天</option>
+                         <option value="21">环境科学</option>
+                         <option value="22">综合</option>
+
+
+                 </select>
+                 </div>
+                 <div class="form-group">
+                     <label for="pressmark">书架号</label>
+                     <input type="text" class="form-control"  name="pressmark" id="pressmark" placeholder="请输入书架号">
+                 </div>
+                 <div class="form-group">
+                     <label for="state">状态</label>
+                    <!-- <input type="text" class="form-control"  name="state"  id="state"  >-->
+                  <select  id="state" name="state" class="form-control" >
+                      <option value ="1">可借阅</option>
+                      <option value ="0">不可借阅</option>
+                  </select>
                 </div>
                 <div class="form-group">
                     <label for="amount">数量</label>

@@ -16,9 +16,9 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close"
           p:driverClassName="com.mysql.jdbc.Driver"
-          p:url="jdbc:mysql://localhost:3306/bs?useUnicode=true"
-            p:username="root"
-          p:password="xiequn11023"/>
+          p:url="jdbc:mysql://localhost:3306/library?useUnicode=true"
+          p:username="root"
+          p:password="123456"/>
     <!-- 定义JDBC模板Bean   -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource" />

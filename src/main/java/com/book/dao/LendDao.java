@@ -31,7 +31,6 @@ public interface LendDao {
     @Update("update book_info set amount= amount +1 where book_id = #{id}")
     int addAmount(@Param("id") long bookId);
 
-
     @Update("update book_info set amount= amount -1 where book_id = #{id} and amount >=1")
     int subAmount(@Param("id") long bookId);
 
