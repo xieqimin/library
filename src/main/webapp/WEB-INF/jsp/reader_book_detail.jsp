@@ -20,7 +20,7 @@
         </div>
         <div class="collapse navbar-collapse" id="example-navbar-collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/readerbooks.html">全部图书</a></li>
+                <li><a href="readerbooks.html">全部图书</a></li>
                 <li class="active">
                     <a href="reader_querybook.html" >
                         图书查询
@@ -92,7 +92,7 @@
                 </tr>
                 <tr>
                     <th>分类号</th>
-                    <td>${detail.classId}</td>
+                    <td>${detail.class_id}</td>
                 </tr>
                 <tr>
                     <th>书架号</th>

@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 君行天下
-  Date: 2017/7/23
-  Time: 16:56
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -212,12 +205,12 @@
             <label for="passwd">密码</label>
             <input type="password" class="form-control" id="passwd" placeholder="请输入密码">
         </div>
-        <div class="checkbox text-left">
+       <!--<div class="checkbox text-left">
             <label>
                 <input type="checkbox" id="remember">记住密码
             </label>
             <a style="margin-left: 100px" href="#">忘记密码?</a>
-        </div>
+        </div>-->
 
         <p style="text-align: right;color: red;position: absolute" id="info"></p><br/>
         <button id="loginButton"  class="btn btn-primary  btn-block">登陆

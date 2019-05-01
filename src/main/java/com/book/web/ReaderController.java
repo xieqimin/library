@@ -43,7 +43,7 @@ public class ReaderController {
         this.readerCardService = readerCardService;
     }
 
-    @RequestMapping("/readerbooks.html")
+    @RequestMapping("readerbooks.html")
     public ModelAndView readerAllBook(){
         List<Book> books=bookService.getAllBooks();
         ModelAndView modelAndView=new ModelAndView("reader_books");

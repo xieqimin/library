@@ -118,6 +118,7 @@
                     <th>出版社</th>
                     <th>ISBN</th>
                     <th>价格</th>
+                    <th>书架号</th>
                     <th>状态</th>
                     <th>详情</th>
                     <th>借阅</th>
@@ -131,13 +132,14 @@
                         <td><c:out value="${book.publish}"></c:out></td>
                         <td><c:out value="${book.isbn}"></c:out></td>
                         <td><c:out value="${book.price}"></c:out></td>
+                        <td><c:out value="${book.pressmark}"></c:out></td>
                         <c:if test="${book.state==1}">
                             <td>可借</td>
                         </c:if>
                         <c:if test="${book.state==0}">
                             <td>不可借</td>
                         </c:if>
-                        <td><a href="readerbookdetail.html?book_id=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-success btn-xs">详情</button></a></td>
+                        <td><a href="readerbookdetail.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-success btn-xs">详情</button></a></td>
                         <c:if test="${book.state==1}">
                             <td><a href="readerlendbook.html?bookId=<c:out value="${book.book_id}"></c:out>"><button type="button" class="btn btn-primary btn-xs">可借阅</button></a></td>
                         </c:if>
