@@ -86,6 +86,9 @@ public class Book implements Serializable{
     }
 
     public String getPubdate() {
+//        if(pubdate==null){
+//            return "";
+//        }
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(pubdate);
     }

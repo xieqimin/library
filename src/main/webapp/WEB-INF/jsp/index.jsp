@@ -47,7 +47,7 @@
 </c:if>
 <h2 style="text-align: center;font-family: 'Adobe 楷体 Std R';color: palevioletred">图 书 馆</h2>
 <div style="float:right;" id="github_iframe"></div>
-<script>
+<!--<script>
     /**
      * Copyright (c) 2016 hustcc
      * License: MIT
@@ -166,7 +166,7 @@
             draw_canvas();
         }, 100);
     }();
-</script>
+</script -->
 <div id="myCarousel" class="carousel slide">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

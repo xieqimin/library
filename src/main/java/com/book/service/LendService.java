@@ -55,4 +55,6 @@ public class LendService {
     public List<Lend> myLendList(int readerId){
         return lendDao.myLendList(readerId);
     }
+
+    public int deleteSernum(long sernum){return lendDao.deleteSernum(sernum);}
 }

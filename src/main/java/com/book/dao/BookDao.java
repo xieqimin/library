@@ -24,6 +24,8 @@ public interface BookDao {
     @Delete("delete from book_info where book_id = #{id}  ")
     int deleteBook(@Param("id") long bookId);
 
+
+
     @Insert("INSERT INTO book_info VALUES(NULL ,#{name},#{author},#{publish},#{isbn},#{introduction},#{language},#{price},#{pubdate},#{class_id},#{pressmark},#{state},#{amount})")
     int addBook(Book book);
 

@@ -119,6 +119,19 @@ public class LendController {
         modelAndView.addObject("list",lendService.myLendList(readerCard.getReader_id()));
         return modelAndView;
     }
+    @RequestMapping("/deleteSernum.html")
+    public String deleteBook(HttpServletRequest request,RedirectAttributes redirectAttributes){
+        long sernum=Integer.parseInt(request.getParameter("sernum"));
+        int res=lendService.deleteSernum(sernum);
+
+        if (res==1){
+            redirectAttributes.addFlashAttribute("succ", "记录日志删除成功！");
+            return "redirect:/lendlist.html";
+        }else {
+            redirectAttributes.addFlashAttribute("error", "记录日志删除失败！");
+            return "redirect:/lendlist.html";
+        }
+    }
 
 
 

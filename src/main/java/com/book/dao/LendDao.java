@@ -36,4 +36,7 @@ public interface LendDao {
 
     @Select("select amount from book_info where book_id = #{id}")
     int getAmount(@Param("id") long bookId);
+
+    @Delete("delete from lend_list where sernum=#{sernum}")
+    int deleteSernum(@Param("sernum") long sernum);
 }
