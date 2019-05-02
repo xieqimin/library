@@ -39,4 +39,7 @@ public interface LendDao {
 
     @Delete("delete from lend_list where sernum=#{sernum}")
     int deleteSernum(@Param("sernum") long sernum);
+
+    @Select("select count(*) from lend_list where book_id=#{bookId} and reader_id=#{readerId} and back_date is null;")
+    int lendRecordCount(@Param("bookId") long bookId,@Param("readerId") long readerId);
 }

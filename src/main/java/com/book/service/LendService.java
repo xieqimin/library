@@ -35,14 +35,18 @@ public class LendService {
 
     //TODO bug 同一人可以借多本相同内容的书籍
     @Transactional
-    public boolean bookLend(long bookId,int readerId){
+    public boolean bookLend(long bookId,int readerId) {
         // Amount==0 返回0
-        if(lendDao.subAmount(bookId)>0) {
-            int amount=lendDao.getAmount(bookId);
-            if(amount==0){
-                lendDao.bookLendTwo(bookId);
+        if (lendDao.lendRecordCount(bookId, readerId) == 0) {
+            if (lendDao.subAmount(bookId) > 0) {
+                int amount = lendDao.getAmount(bookId);
+                if (amount == 0) {
+                    lendDao.bookLendTwo(bookId);
+                }
+                return lendDao.bookLendOne(bookId, readerId, df.format(new Date())) > 0;
+            } else {
+                return false;
             }
-            return lendDao.bookLendOne(bookId, readerId, df.format(new Date())) > 0;
         }else {
             return false;
         }
